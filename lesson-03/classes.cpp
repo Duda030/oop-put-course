@@ -1,39 +1,38 @@
-#include <iostream>
+ #include <iostream>
 
-using namespace std;
+ using namespace std;
 
-class Quad{
-private:
-    int a;
-    int b;
-public:
+ class Quad{
+     private:
+         int a;
+         int b;
+    public:
     Quad(int a, int b){
         this->a = a;
         this->b = b;
     }
-    int GetA(){
-        return this->a;
-    };
-    int GetB(){
-        return this->b;
-    };
-};
+   int Calc(){
+       int x;
+       x = this->a*this->b;
+       return x;
+         }
+     };
 
-class Calculator{
+ class Printer{
     public:
-    void Calc(Quad q){
-        int x;
-        x = q.GetA()*q.GetB();
-        cout<<x<<endl;
-    }
-};
+    void print(Quad x){
+        int a = x.Calc();
+        cout<<a<<endl;
+    };
+ };
 
 
 
-int main()
-{
-    Quad rectangle(5,6);
-    Calculator c;
-    c.Calc(rectangle);
+ int main()
+ {
+    Quad rectangle(5,8);
+    Printer a;
+    a.print(rectangle);
+
     return 0;
-};
+ }
